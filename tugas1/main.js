@@ -3,7 +3,7 @@ Anggota Kelompok:
 1. Muhammad Drajat Ramdhani (1930511053)
 2. Deni Alpiana (1930511065)
 3. Ikram Maulana (1930511075)
-4. Ariski
+4. Ariski Muhammad Nazmi (1930511079)
 */
 // # for private
 // _ for protected
@@ -42,18 +42,28 @@ class Laptop {
   
   // method turn on
   turnOn(){
-    if(this.#batteryPercentage === 0 || this.#batteryPercentage <= 0){
-      console.log('Battery low, please charge your laptop');
-    } else{
-      this.#willOn = true;
-      console.log('Laptop will turned on');
+    // Pengecekan jika laptop sudah turned on
+    if(this.#willOn === true){
+      console.log('This Laptop already turned on');
+    } else {
+      // Pengecekan Apakah baterai laptop = 0 atau <= 0
+      if(this.#batteryPercentage === 0 || this.#batteryPercentage <= 0){
+        console.log('Battery low, please charge your laptop');
+      } else{
+        this.#willOn = true;
+        console.log('Laptop will turned on');
+      }
     }
   }
   
   // method turn off
   turnOff(){
-    this.#willOn = false;
-    console.log('Laptop will turned off');
+    if(this.#willOn === false){
+      console.log('This laptop already turned off');
+    } else {
+      this.#willOn = false;
+      console.log('Laptop will turned off');
+    }
   }
 
   // method playing game fortnite
@@ -108,7 +118,7 @@ class Laptop {
     console.log(`Owner: ${this.owner}`);
   }
   
-  // Method cek kompabilitas
+  // Method cek kompabilitas Processor
   #checkCompatibility(){
     if (this.#processor === 'I5' || this.#processor === 'I6' || this.#processor === 'I7' || this.#processor === 'I8' || this.#processor === 'I9' || this.#processor === 'I10' || this.#processor === 'I11') {
         this.#processor = true;
@@ -124,11 +134,15 @@ const LaptopDrajat = new Laptop('Windows', 120, 16, 'Acer', 'Predator', 'Black',
 // LaptopDrajat.turnOn();
 // LaptopDrajat.charging();
 // LaptopDrajat.turnOn();
-LaptopDrajat.HardwareInfo();
+// LaptopDrajat.HardwareInfo();
 
 const LaptopIkram = new Laptop('MacOS', 240, 16, 'Apple', 'Macbook Air M1', 'Silver', 'I7', 60, 'Ikram');
-LaptopIkram.HardwareInfo();
+// LaptopIkram.HardwareInfo();
+// LaptopIkram.turnOn();
+LaptopIkram.turnOn();
+LaptopIkram.turnOff();
+LaptopIkram.turnOff();
 
 
 const LaptopDeni = new Laptop('Linux', 360, 16, 'Acer', 'TUF 14', 'Silver', 'I7', 10, 'Deni');
-LaptopDeni.HardwareInfo();
+// LaptopDeni.HardwareInfo();
