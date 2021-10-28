@@ -1,0 +1,20 @@
+{
+  "name": "TugasPBO",
+  "version": "1.0.0",
+  "description": "Anggota Kelompok: \r 1. MuhaMuhammad Drajat Ramdhani (1930511053)\r 2. Deni Alpiana (1930511065)\r 3. Ikram Maulana (1930511075)\r 4. Ariski Muhammad Nazmi (1930511079)",
+  "main": "index.js",
+  "scripts": {
+    "tugas1": "node ./tugas1/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ikram-Maulana/TugasPBO.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ikram-Maulana/TugasPBO/issues"
+  },
+  "homepage": "https://github.com/Ikram-Maulana/TugasPBO#readme"
+}
