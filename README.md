@@ -5,7 +5,7 @@ Anggota Kelompok:
 3. Ikram Maulana (1930511075)
 4. Ariski Muhammad Nazmi (1930511079)
 
-## For Dynamic Running
-1. Install [Node.Js](https://nodejs.org/en/download/)
-2. If you want to edit file tugas1 go to **./tugas1/main.js**
-3. If you want to run tugas1 javascript file using **npm run tugas1**
+## 💻 For Dynamic Running 💻
+1. Install [Node.Js](https://nodejs.org/en/download/).
+2. If you want to edit file tugas1 go to **./tugas1/main.js**.
+3. If you want to run tugas1 javascript file using **npm run tugas1** on terminal.
