@@ -1,6 +1,6 @@
 # TugasPBO
 Anggota Kelompok: 
-1. MuhaMuhammad Drajat Ramdhani (1930511053)
+1. Muhammad Drajat Ramdhani (1930511053)
 2. Deni Alpiana (1930511065)
 3. Ikram Maulana (1930511075)
 4. Ariski Muhammad Nazmi (1930511079)
@@ -14,3 +14,4 @@ Anggota Kelompok:
 1. Tugas1 (Javascript)
 2. Tugas2 (PHP)
 3. Tugas3 (PHP)
+4. Tugas4 (PHP)
