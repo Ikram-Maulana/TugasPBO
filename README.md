@@ -16,3 +16,4 @@ Anggota Kelompok:
 3. Tugas3 (PHP)
 4. Tugas4 (PHP)
 5. Tugas5 (PHP)
+6. Tugas6 (Javascript)
