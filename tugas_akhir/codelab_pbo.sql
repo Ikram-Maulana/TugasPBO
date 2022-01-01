@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 01 Jan 2022 pada 05.01
+-- Waktu pembuatan: 01 Jan 2022 pada 10.13
 -- Versi server: 8.0.27
 -- Versi PHP: 7.4.27
 
@@ -38,14 +38,15 @@ CREATE TABLE `riwayat` (
   `protein` int NOT NULL,
   `karbohidrat` int NOT NULL,
   `lemak` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `riwayat`
 --
 
 INSERT INTO `riwayat` (`id`, `nama`, `jk`, `bb`, `tb`, `usia`, `olahraga`, `protein`, `karbohidrat`, `lemak`) VALUES
-(1, 'Muhammad Drajat Ramdhani', 'l', 55, 171, 21, 2, 79, 181, 35);
+(1, 'Muhammad Drajat Ramdhani', 'l', 55, 171, 21, 2, 109, 437, 49),
+(15, 'Ikram Maulan', 'l', 73, 176, 17, 1, 130, 522, 58);
 
 --
 -- Indexes for dumped tables
@@ -65,7 +66,7 @@ ALTER TABLE `riwayat`
 -- AUTO_INCREMENT untuk tabel `riwayat`
 --
 ALTER TABLE `riwayat`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
