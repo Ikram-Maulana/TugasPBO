@@ -1,12 +1,22 @@
-<div class="container prose mx-auto mt-12 px-4 align-center">
-  <h2 class="font-bold text-2xl my-4">Data Angka Kecukupan Gizi</h2>
-  <label for="my-modal-2" class="btn btn-primary modal-button tombolTambahData mb-4">Tambah Data</label>
-  <div class="w-full mb-4">
-    <?php Flasher::flash(); ?>
+<div class="container mt-3">
+
+  <div class="row">
+    <div class="col-lg-6">
+      <?php Flasher::flash(); ?>
+    </div>
   </div>
 
-  <div class="overflow-x-auto">
-    <table class="table w-full">
+  <div class="row mb-2">
+    <div class="col-lg-6">
+      <button type="button" class="btn btn-primary tombolTambahData" data-bs-toggle="modal" data-bs-target="#formModal">
+        Tambah Data Riwayat
+      </button>
+    </div>
+  </div>
+
+  <section>
+    <h3>Daftar Riwayat</h3>
+    <table class="table table-striped">
       <thead>
         <tr>
           <th></th>
@@ -19,81 +29,91 @@
         </tr>
       </thead>
       <tbody>
-        <?php $no = 1; foreach($data['riwayat'] as $riwayat) : ?>
+        <?php $no = 1; foreach( $data['rwyt'] as $rwyt ) : ?>
         <tr>
           <th><?= $no ?></th>
-          <th><?= $riwayat['nama']; ?></th>
-          <?php $jk = $riwayat['jk']; ?>
+          <th><?= $rwyt['nama']; ?></th>
+          <?php $jk = $rwyt['jk']; ?>
           <td><?= ($jk === 'l') ? "Laki-Laki" : "Perempuan" ?></td>
-          <td><?= $riwayat['protein']; ?> gram</td>
-          <td><?= $riwayat['karbohidrat']; ?> gram</td>
-          <td><?= $riwayat['lemak']; ?> gram</td>
+          <td><?= $rwyt['protein']; ?> gram</td>
+          <td><?= $rwyt['karbohidrat']; ?> gram</td>
+          <td><?= $rwyt['lemak']; ?> gram</td>
           <td>
-            <a href="<?= BASEURL; ?>/home/detail/<?= $riwayat['id']; ?>"
-              class="btn btn-sm btn-primary text-white">Detail</a>
-            <label for="my-modal-2" class="btn btn-sm modal-button btn-success text-white tombolUbahData"
-              data-id="<?= $riwayat['id']; ?>">Edit</label>
-            <a href="<?= BASEURL; ?>/home/hapus/<?= $riwayat['id']; ?>" class="btn btn-sm btn-error text-white"
-              onclick="return confirm('yakin?');">Hapus</a>
+            <a href="<?= BASEURL; ?>/Home/detail/<?= $rwyt['id']; ?>" class="btn btn-primary">detail</a>
+            <a href="<?= BASEURL; ?>/Home/ubah/<?= $rwyt['id']; ?>" class="btn btn-success tampilModalUbah"
+              data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $rwyt['id']; ?>">ubah</a>
+            <a href="<?= BASEURL; ?>/Home/hapus/<?= $rwyt['id']; ?>" class="btn btn-danger"
+              onclick="return confirm('yakin?');">hapus</a>
           </td>
         </tr>
         <?php $no++ ?>
         <?php endforeach; ?>
       </tbody>
     </table>
-  </div>
+  </section>
+
 </div>
 
+
 <!-- Modal -->
-<input type="checkbox" id="my-modal-2" class="modal-toggle">
-<div class="modal">
-  <div class="modal-box max-h-[35rem] overflow-y-auto">
-    <h1 class="text-2xl font-bold mb-2" id="judulModal">Tambah Data</h1>
-    <form action="<?= BASEURL; ?>/home/tambah" method="POST">
-      <input type="hidden" name="id" id="id">
-      <label class="label">
-        <span class="label-text">Nama Lengkap</span>
-      </label>
-      <input type="text" placeholder="Masukan Nama Anda" name="nama" id="nama" class="input input-bordered w-full">
-      <label class="label">
-        <span class="label-text">Jenis Kelamin</span>
-      </label>
-      <div>
-        <select class="select select-bordered w-full" name="jk" id="jk">
-          <option disabled="disabled" selected="selected">Pilih</option>
-          <option value="l">Pria</option>
-          <option value="p">Wanita</option>
-        </select>
+<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="formModalLabel">Tambah Data Riwayat</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <label class="label">
-        <span class="label-text">Berat Badan</span>
-      </label>
-      <input type="text" placeholder="Masukan Berat Badan Anda" name="bb" id="bb" class="input input-bordered w-full">
-      <label class="label">
-        <span class="label-text">Tinggi Badan</span>
-      </label>
-      <input type="text" placeholder="Masukan Tinggi Badan Anda" name="tb" id="tb" class="input input-bordered w-full">
-      <label class="label">
-        <span class="label-text">Usia</span>
-      </label>
-      <input type="text" placeholder="Masukan Usia Anda" name="usia" id="usia" class="input input-bordered w-full">
-      <label class="label">
-        <span class="label-text">Berapa sering anda olahraga</span>
-      </label>
-      <div>
-        <select class="select select-bordered w-full" name="olahraga" id="olahraga">
-          <option disabled="disabled" selected="selected">Pilih</option>
-          <option value="1">Sangat Jarang</option>
-          <option value="2">Jarang (1-3 kali per minggu)</option>
-          <option value="3">Cukup (3-5 kali per minggu)</option>
-          <option value="4">Sering (6-7 kali per minggu)</option>
-          <option value="5">Sangat Sering (sekitar 2 kali dalam sehari)</option>
-        </select>
+      <div class="modal-body">
+
+        <form action="<?= BASEURL; ?>/Home/tambah" method="post">
+          <input type="hidden" name="id" id="id">
+          <div class="form-group">
+            <label for="nama">Nama</label>
+            <input type="text" class="form-control" id="nama" name="nama" autocomplete="off" required>
+          </div>
+
+          <div class="form-group">
+            <label for="jk">Jenis Kelamin</label>
+            <select class="form-select" aria-label="Default select example" name="jk" id="jk">
+              <option disabled="disabled" selected="selected">Pilih</option>
+              <option value="l">Pria</option>
+              <option value="p">Wanita</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="bb">Berat Badan</label>
+            <input type="number" class="form-control" id="bb" name="bb" autocomplete="off">
+          </div>
+
+          <div class="form-group">
+            <label for="tb">Tinggi Badan</label>
+            <input type="number" class="form-control" id="tb" name="tb" autocomplete="off">
+          </div>
+
+          <div class="form-group">
+            <label for="usia">Usia</label>
+            <input type="number" class="form-control" id="usia" name="usia" autocomplete="off">
+          </div>
+
+          <div class="form-group">
+            <label for="olahraga">Seringnya Olahraga</label>
+            <select class="form-select" aria-label="Default select example" id="olahraga" name="olahraga">
+              <option disabled="disabled" selected="selected">Pilih</option>
+              <option value="1">Sangat Jarang</option>
+              <option value="2">Jarang (1-3 kali per minggu)</option>
+              <option value="3">Cukup (3-5 kali per minggu)</option>
+              <option value="4">Sering (6-7 kali per minggu)</option>
+              <option value="5">Sangat Sering (sekitar 2 kali dalam sehari)</option>
+            </select>
+          </div>
+
       </div>
-      <div class="modal-action">
-        <button type="submit" for="my-modal-2" class="btn btn-outline btn-primary" id="btnModal">Tambah Data</button>
-        <label for="my-modal-2" class="btn">Close</label>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Tambah Data</button>
+        </form>
       </div>
-    </form>
+    </div>
   </div>
 </div>
