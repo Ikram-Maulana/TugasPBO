@@ -1,54 +1,53 @@
-<div class="container">
-  <h2 class="font-bold text-2xl my-4">Detail Data</h2>
-  <a href="<?= BASEURL; ?>/Home" class="btn btn-primary text-white mb-4">Kembali</a>
-</div>
-<main class="container d-flex">
-  <table class="table table-striped w-100 w-md-50 me-3">
-    <tbody>
-      <tr>
-        <th colspan="2" class="text-center">Identitas</th>
-      </tr>
-      <tr>
-        <th>Nama</th>
-        <td><?= $data['rwyt']['nama']; ?></td>
-      </tr>
-      <tr>
-        <th>Jenis Kelamin</th>
-        <td><?= ($data['rwyt']['jk'] === 'l') ? "Laki-Laki" : "Perempuan" ?></td>
-      </tr>
-      <tr>
-        <th>Berat Badan</th>
-        <td><?= $data['rwyt']['bb']; ?></td>
-      </tr>
-      <tr>
-        <th>Tinggi Badan</th>
-        <td><?= $data['rwyt']['tb']; ?></td>
-      </tr>
-      <tr>
-        <th>Usia</th>
-        <td><?= $data['rwyt']['usia']; ?></td>
-      </tr>
-      <tr>
-    </tbody>
-  </table>
+<div class="content-body">
 
-  <table class="table table-striped w-100 w-md-50">
-    <tr>
-      <th class="text-center" colspan="2">
-        Angka Kebutuhan Gizi <?= $data['rwyt']['nama']; ?>
-      </th>
-    </tr>
-    <tr>
-      <th>Protein</th>
-      <td><?= $data['rwyt']['protein']; ?></td>
-    </tr>
-    <tr>
-      <th>Karbohidrat</th>
-      <td><?= $data['rwyt']['karbohidrat']; ?></td>
-    </tr>
-    <tr>
-      <th>Lemak</th>
-      <td><?= $data['rwyt']['lemak']; ?></td>
-    </tr>
-  </table>
-</main>
+  <div class="container-fluid">
+    <div class="page-titles mb-0">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="<?= BASEURL; ?>/Home">Home</a></li>
+        <li class="breadcrumb-item active"><a href="<?= BASEURL; ?>/Home">Index</a></li>
+      </ol>
+    </div>
+
+    <a href="<?= BASEURL; ?>/Home" class="btn btn-primary text-white mb-4">Kembali</a>
+
+    <div class="d-flex justify-content-lg-between flex-column flex-lg-row justify-content-center">
+      <div class="col-xl-4 col-lg-12 col-sm-12 p-0 pl-lg-0 pr-lg-3">
+        <div class="card overflow-hidden">
+          <div class="text-center p-3 overlay-box">
+            <h3 class="mt-3 mb-1 text-white"><?= $data['rwyt']['nama']; ?></h3>
+            <p class="text-white"><?= ($data['rwyt']['jk'] === 'l') ? "Laki-Laki" : "Perempuan" ?></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex justify-content-between"><span class="mb-0">Berat Badan</span> <strong
+                class="text-muted"><?= $data['rwyt']['bb']; ?> </strong></li>
+            <li class="list-group-item d-flex justify-content-between"><span class="mb-0">Tinggi Badan</span> <strong
+                class="text-muted"><?= $data['rwyt']['tb']; ?> </strong></li>
+            <li class="list-group-item d-flex justify-content-between"><span class="mb-0">Usia</span> <strong
+                class="text-muted"><?= $data['rwyt']['usia']; ?> </strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-xl-8 col-lg-12 col-sm-12 p-0 pl-lg-0 pr-lg-3">
+        <div class="card text-white bg-warning text-black">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex justify-content-between"><span class="mb-0">Angka Kebutuhan Gizi</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between"><span class="mb-0">Protein
+                :</span><strong><?= $data['rwyt']['protein']; ?> gram</strong></li>
+            <li class="list-group-item d-flex justify-content-between"><span class="mb-0">Karbohidrat
+                :</span><strong><?= $data['rwyt']['karbohidrat']; ?> gram</strong></li>
+            <li class="list-group-item d-flex justify-content-between"><span class="mb-0">Lemak
+                :</span><strong><?= $data['rwyt']['lemak']; ?> gram</strong></li>
+            <li class="list-group-item"><span class="mb-0">Jadi, Angka Kebutuhan Gizi untuk
+                <?= $data['rwyt']['nama']; ?> adalah <strong><?= $data['rwyt']['protein']; ?> gram Protein,
+                  <?= $data['rwyt']['karbohidrat']; ?> gram Karbohidrat, <?= $data['rwyt']['lemak']; ?> gram
+                  Lemak</strong>.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

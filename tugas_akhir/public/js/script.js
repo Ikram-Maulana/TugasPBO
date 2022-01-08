@@ -1,7 +1,7 @@
 $(function() {
 
     $('.tombolTambahData').on('click', function() {
-        $('#formModalLabel').html('Tambah Data Mahasiswa');
+        $('.modal-title').html('Tambah Data Mahasiswa');
         $('.modal-footer button[type=submit]').html('Tambah Data');
         $('#nama').val('');
         $('#jk').val('');
@@ -15,7 +15,7 @@ $(function() {
 
     $('.tampilModalUbah').on('click', function() {
         
-        $('#formModalLabel').html('Ubah Data Mahasiswa');
+        $('.modal-title').html('Ubah Data Mahasiswa');
         $('.modal-footer button[type=submit]').html('Ubah Data');
         $('.modal-body form').attr('action', 'http://localhost/explore-mvc/public/mahasiswa/ubah');
 

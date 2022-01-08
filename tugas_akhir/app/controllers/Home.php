@@ -23,11 +23,11 @@ class Home extends Controller {
     {
         if( $this->model('Home_model')->tambahDataRiwayat($_POST) > 0 ) {
             Flasher::setFlash('berhasil', 'ditambahkan', 'success');
-            header('Location: ' . BASEURL . '/home');
+            header('Location: ' . BASEURL . '/Home');
             exit;
         } else {
             Flasher::setFlash('gagal', 'ditambahkan', 'danger');
-            header('Location: ' . BASEURL . '/home');
+            header('Location: ' . BASEURL . '/Home');
             exit;
         }
     }
@@ -36,11 +36,11 @@ class Home extends Controller {
     {
         if( $this->model('Home_model')->hapusDataRiwayat($id) > 0 ) {
             Flasher::setFlash('berhasil', 'dihapus', 'success');
-            header('Location: ' . BASEURL . '/home');
+            header('Location: ' . BASEURL . '/Home');
             exit;
         } else {
             Flasher::setFlash('gagal', 'dihapus', 'danger');
-            header('Location: ' . BASEURL . '/home');
+            header('Location: ' . BASEURL . '/Home');
             exit;
         }
     }
@@ -54,11 +54,11 @@ class Home extends Controller {
     {
         if( $this->model('Home_model')->ubahDataRiwayat($_POST) > 0 ) {
             Flasher::setFlash('berhasil', 'diubah', 'success');
-            header('Location: ' . BASEURL . '/home');
+            header('Location: ' . BASEURL . '/Home');
             exit;
         } else {
             Flasher::setFlash('gagal', 'diubah', 'danger');
-            header('Location: ' . BASEURL . '/home');
+            header('Location: ' . BASEURL . '/Home');
             exit;
         } 
     }
